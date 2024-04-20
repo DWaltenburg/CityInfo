@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/city-info/static/css/main.db62923b.css",
-    "main.js": "/city-info/static/js/main.9edfbb74.js",
-    "static/js/453.0a4bb189.chunk.js": "/city-info/static/js/453.0a4bb189.chunk.js",
-    "index.html": "/city-info/index.html",
-    "main.db62923b.css.map": "/city-info/static/css/main.db62923b.css.map",
-    "main.9edfbb74.js.map": "/city-info/static/js/main.9edfbb74.js.map",
-    "453.0a4bb189.chunk.js.map": "/city-info/static/js/453.0a4bb189.chunk.js.map"
+    "main.css": "/CityInfo/static/css/main.db62923b.css",
+    "main.js": "/CityInfo/static/js/main.9dc0d6af.js",
+    "static/js/453.0a4bb189.chunk.js": "/CityInfo/static/js/453.0a4bb189.chunk.js",
+    "index.html": "/CityInfo/index.html",
+    "main.db62923b.css.map": "/CityInfo/static/css/main.db62923b.css.map",
+    "main.9dc0d6af.js.map": "/CityInfo/static/js/main.9dc0d6af.js.map",
+    "453.0a4bb189.chunk.js.map": "/CityInfo/static/js/453.0a4bb189.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.db62923b.css",
-    "static/js/main.9edfbb74.js"
+    "static/js/main.9dc0d6af.js"
   ]
 }
