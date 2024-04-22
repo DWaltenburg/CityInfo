@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
@@ -10,6 +10,7 @@ const NavigationBar = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/">Home</Nav.Link>
+          <Nav.Link as={Link} to="/Countries">Countries</Nav.Link>
           <Nav.Link as={Link} to="/Cities">Cities</Nav.Link>
           <Nav.Link as={Link} to="/Languages">Languages</Nav.Link>
           <Nav.Link as={Link} to="/PointsOfInterest">Points of Interest</Nav.Link>

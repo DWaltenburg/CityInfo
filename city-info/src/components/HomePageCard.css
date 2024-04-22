@@ -1,3 +1,6 @@
 .normal-text {
     text-decoration: none;
 }
+.card:hover {
+    background-color: #f1f1f1;
+}
