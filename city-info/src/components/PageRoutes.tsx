@@ -1,16 +1,14 @@
-import Page1 from "./Pages/Page1";
-import Page2 from "./Pages/Page2";
-import MainContent from "./MainContent";
-import ProjectsPage from "./Pages/ProjectsPage";
 import { Routes, Route } from "react-router-dom";
+import { Home, Cities, Languages, PointsOfInterest } from "./Pages/";  
+
 
 const PageRoutes = () => {
   return (
         <Routes>
-          <Route path="/" element={<MainContent />} />
-          <Route path="/Page1" element={<Page1 />} />
-          <Route path="/Page2" element={<Page2 />} />
-          <Route path="/Projects" element={<ProjectsPage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/Cities" element={<Cities />} />
+          <Route path="/Languages" element={<Languages />} />
+          <Route path="/PointsOfInterest" element={<PointsOfInterest />} />
         </Routes>
   );
 };
