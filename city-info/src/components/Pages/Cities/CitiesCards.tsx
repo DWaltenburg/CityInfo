@@ -1,11 +1,7 @@
 import React from "react";
-import { Button, ButtonGroup } from "react-bootstrap";
+import { Button, ButtonGroup, Card } from "react-bootstrap";
 import { Icon } from "../../Icon";
-import { Card } from "react-bootstrap";
 import { CityListProps, City } from "../../Props/CityProps";
-// import { $ } from "jquery";
-
-
 
 let CityCard = ({ ...props }: City) => {
   return (
@@ -31,15 +27,14 @@ let CityCard = ({ ...props }: City) => {
   );
 };
 
-
-let CitiesCards = ({ cities } : CityListProps ) => {
+let CitiesCards = ({ cities }: CityListProps) => {
   if (!cities) {
     return <div>No cities to display</div>;
   }
   return (
     <div className="container">
       <div className="row">
-        {cities.map((city:City) => {
+        {cities.map((city: City) => {
           return (
             <div className="col-md-4">
               <CityCard
