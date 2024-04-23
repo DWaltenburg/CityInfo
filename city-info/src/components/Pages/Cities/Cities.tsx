@@ -1,9 +1,30 @@
-import React from "react";
-import { Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Button, Spinner } from "react-bootstrap";
 import { Icon } from "../../Icon";
 import CitiesCards from "./CitiesCards";
+import $ from "jquery";
 
 let Cities = () => {
+  const [cities, setCities] = useState();
+  useEffect(() => {
+    let cities: any;
+    $.ajax({
+      url: "https://cityinfo.buchwaldshave34.dk/api/City",
+      type: "GET",
+      success: function (data) {
+        cities = [];
+        data.forEach((city: any) => {
+          cities.push(city);
+        });
+      },
+      error: function (error) {
+        console.log(error);
+      },
+    }).then(() => {
+      setCities(cities);
+    });
+  }, []);
+
   return (
     <div>
       <div className="my-2">
@@ -16,7 +37,15 @@ let Cities = () => {
           Add New City <Icon iconName="PlusLg" />
         </Button>
       </div>
-      <CitiesCards />
+      {cities === undefined ? (
+        <div>
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </div>
+      ) : (
+        <CitiesCards cities={cities} />
+      )}
     </div>
   );
 };

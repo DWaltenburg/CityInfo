@@ -2,21 +2,19 @@ import React from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
 import { Icon } from "../../Icon";
 import { Card } from "react-bootstrap";
+import { CityListProps, City } from "../../Props/CityProps";
+// import { $ } from "jquery";
 
-interface CityCardProps {
-  cityName: string;
-  country: string;
-  description: string;
-}
 
-let CityCard = ({ ...props }: CityCardProps) => {
+
+let CityCard = ({ ...props }: City) => {
   return (
     <Card className="my-2">
       <Card.Header>
-        <Card.Title>{props.cityName}</Card.Title>
+        <Card.Title>{props.name}</Card.Title>
       </Card.Header>
       <Card.Body>
-        <Card.Text>{props.country}</Card.Text>
+        <Card.Text>{props.country.countryName}</Card.Text>
         <Card.Text>{props.description}</Card.Text>
       </Card.Body>
       <Card.Footer>
@@ -33,16 +31,31 @@ let CityCard = ({ ...props }: CityCardProps) => {
   );
 };
 
-let CitiesCards = () => {
+
+let CitiesCards = ({ cities } : CityListProps ) => {
+  if (!cities) {
+    return <div>No cities to display</div>;
+  }
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-4">
-          <CityCard cityName="City 1" country="Country 1" description="Very butifaull" />
-        </div>
-        <div className="col-md-4">
-          <CityCard cityName="City 2" country="Country 2" description="WuYea" />
-        </div>
+        {cities.map((city:City) => {
+          return (
+            <div className="col-md-4">
+              <CityCard
+                key={city.cityId}
+                cityId={city.cityId}
+                cityLanguages={city.cityLanguages}
+                country={city.country}
+                countryID={city.countryID}
+                description={city.description}
+                name={city.name}
+                numberOfPointsOfInterest={city.numberOfPointsOfInterest}
+                pointsOfInterest={city.pointsOfInterest}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
