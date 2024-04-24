@@ -49,7 +49,7 @@ let Cities = () => {
     </div>
   );
 };
-// add pagination for cities cards
+// add pagination for cities cards limit at 12
 // add modal for delete confirmation
 // add edit page for cities
 

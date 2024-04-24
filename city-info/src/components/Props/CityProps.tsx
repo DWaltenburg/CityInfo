@@ -4,21 +4,28 @@ export interface CityListProps {
 
 export interface City {
   cityId: number;
-  cityLanguages: [languageId: number, languageName: string];
+  cityLanguages: CityLanguage[];
   country: Country;
   countryID: number;
   description: string;
   name: string;
   numberOfPointsOfInterest: number;
-  pointsOfInterest: [
-    pointOfInterestId: number,
-    cityId: number,
-    name: string,
-    description: string
-  ];
+  pointsOfInterest: PointOfInterest[];
 }
 
 interface Country {
     countryID: number;
     countryName: string;
+}
+
+interface CityLanguage {
+    languageId: number;
+    languageName: string;
+}
+
+interface PointOfInterest {
+    pointOfInterestId: number;
+    cityId: number;
+    name: string;
+    description: string;
 }
