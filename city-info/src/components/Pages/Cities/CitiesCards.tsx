@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 // TODO: theme cards to the city theme color
 let CityCard = ({ ...props }: City) => {
   return (
-    <Card as={Link} to={"/Cities/" + props.cityId} className="my-2">
+    <Card as={Link} to={"/Cities/" + props.cityId} className="my-2 normal-text">
       <Card.Header>
         <Card.Title>{props.name}</Card.Title>
         <Card.Subtitle>{props.country.countryName}</Card.Subtitle>

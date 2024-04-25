@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './CardStyles.css';
 import NavigationBar from './components/Navbar';
 import PageRoutes from './components/PageRoutes';
 
