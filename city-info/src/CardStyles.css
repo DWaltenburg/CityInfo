@@ -1,6 +1,30 @@
+:root {
+  --Red: #fa5252;
+  
+  --Blue: #228be6;
+  --Blue-highlight: #228be6;
+  --Blue-60: #228be660;
+  --Blue-80: #228be680;
+  --Blue-hover: var(--Blue-80);
+  
+  --Green: #40c057;
+  --Yellow: #fcc419;
+
+  --City-color: var(--Blue-60);
+}
+
 .card.normal-text {
-    text-decoration: none;
+  text-decoration: none;
 }
 .card:hover {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
+.card.city-card .card-body {
+  text-align: justify;
+}
+/* .card.city-card {
+  background-color: var(--City-color);
+  &:hover {
+    background-color: var(--Blue-hover);
+  }
+} */
