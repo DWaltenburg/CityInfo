@@ -19,9 +19,6 @@
 .card:hover {
   background-color: #f1f1f1;
 }
-.card.city-card .card-body {
-  text-align: justify;
-}
 /* .card.city-card {
   background-color: var(--City-color);
   &:hover {
