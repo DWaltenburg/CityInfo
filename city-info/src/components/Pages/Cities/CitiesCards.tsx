@@ -35,7 +35,7 @@ let CityCard = ({ ...props }: City) => {
             placement="right"
           >
             <div style={{width: "fit-content"}}>
-              {props.cityLanguages.length}{" "}
+              {props.cityLanguages?.length}{" "}
               <Icon iconName="ChatTextFill" color={LanguageColor} />
             </div>
           </OverlayTrigger>
