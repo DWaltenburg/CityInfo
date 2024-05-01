@@ -7,7 +7,7 @@ const PageRoutes = () => {
   return (
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="Countries" element={<Countries />} />
+          <Route path="/Countries" element={<Countries />} />
           <Route path="/Cities" element={<Cities />} />
           <Route path="/Cities/:cityId" element={<City/>} />
           <Route path="/Cities/New" element={<NewCity />} />
