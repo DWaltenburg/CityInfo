@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CityInfo/static/css/main.3ffb7cc1.css",
-    "main.js": "/CityInfo/static/js/main.bee3c5f4.js",
+    "main.js": "/CityInfo/static/js/main.ee8ef33e.js",
     "static/js/453.0a4bb189.chunk.js": "/CityInfo/static/js/453.0a4bb189.chunk.js",
     "static/media/POI_logo.png": "/CityInfo/static/media/POI_logo.3633e16eafd6d68550d9.png",
     "static/media/country_logo.png": "/CityInfo/static/media/country_logo.08dbe1cac4ac658a34f7.png",
@@ -9,11 +9,11 @@
     "static/media/city_logo.svg": "/CityInfo/static/media/city_logo.33aa809b34c39347da8931b0c81929a6.svg",
     "index.html": "/CityInfo/index.html",
     "main.3ffb7cc1.css.map": "/CityInfo/static/css/main.3ffb7cc1.css.map",
-    "main.bee3c5f4.js.map": "/CityInfo/static/js/main.bee3c5f4.js.map",
+    "main.ee8ef33e.js.map": "/CityInfo/static/js/main.ee8ef33e.js.map",
     "453.0a4bb189.chunk.js.map": "/CityInfo/static/js/453.0a4bb189.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3ffb7cc1.css",
-    "static/js/main.bee3c5f4.js"
+    "static/js/main.ee8ef33e.js"
   ]
 }
