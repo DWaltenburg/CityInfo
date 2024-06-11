@@ -7,16 +7,16 @@ export let CityInfo = ({ ...cityObj }: any) => {
     return (
         <div>
             <div className="my-2">
-                <h1>{city.name}</h1>
+                <h1>{city.cityName}</h1>
                 <p>
-                    {city.description}
+                    {city.cityDescription}
                 </p>
             </div>
             <div>
                 <h2>Languages</h2>
                 <ul>
                     {city.cityLanguages.map((language: any) => {
-                        return <li key={language.languageId}>{language.languageName}</li>
+                        return <li key={language.languageId}>{language.language.languageName}</li>
                     })}
                 </ul>
             </div>
@@ -28,7 +28,7 @@ export let CityInfo = ({ ...cityObj }: any) => {
                 <h2>Points of Interest</h2>
                 <ul>
                     {city.pointsOfInterest.map((pointOfInterest: any) => {
-                        return <li key={pointOfInterest.pointOfInterestId}>{pointOfInterest.name}</li>
+                        return <li key={pointOfInterest.pointOfInterestId}>{pointOfInterest.pointOfInterestName}</li>
                     })}
                 </ul>
             </div>

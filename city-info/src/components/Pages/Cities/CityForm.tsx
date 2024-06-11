@@ -16,7 +16,7 @@ let CityForm = ({ ...cityObj }: any) => {
   //ajax get countries
   if (countries.length === 0) {
     $.ajax({
-      url: "https://cityinfo.buchwaldshave34.dk/api/Country",
+      url: "https://cityinfo80.buchwaldshave34.dk/api/Country/GetCountries",
       type: "GET",
       success: function (data) {
         $("#formCountries").empty();
@@ -37,7 +37,7 @@ let CityForm = ({ ...cityObj }: any) => {
   //ajax get languages
   if (languages.length === 0) {
     $.ajax({
-      url: "https://cityinfo.buchwaldshave34.dk/api/Language",
+      url: "https://cityinfo80.buchwaldshave34.dk/api/Language/GetLanguages",
       type: "GET",
       success: function (data) {
         $("#formLanguages").empty();
@@ -55,13 +55,13 @@ let CityForm = ({ ...cityObj }: any) => {
   //ajax get points of interest
   if (pointsOfInterest.length === 0) {
     $.ajax({
-      url: "https://cityinfo.buchwaldshave34.dk/api/PointOfInterest",
+      url: "https://cityinfo80.buchwaldshave34.dk/api/PointOfInterest/GetPointOfInterests",
       type: "GET",
       success: function (data) {
         $("#formPointsOfInterest").empty();
         data.forEach((pointOfInterest: any) => {
           $("#formPointsOfInterest").append(
-            `<option ${city?.pointsOfInterest.find(x => x.pointOfInterestId === pointOfInterest.pointOfInterestId)? "selected":""} value='${pointOfInterest.pointOfInterestId}'>${pointOfInterest.name}</option>`
+            `<option ${city?.pointsOfInterest.find(x => x.pointOfInterestId === pointOfInterest.pointOfInterestId)? "selected":""} value='${pointOfInterest.pointOfInterestId}'>${pointOfInterest.pointOfInterestName}</option>`
           );
         });
       },
@@ -81,7 +81,7 @@ let CityForm = ({ ...cityObj }: any) => {
         <Form.Control
           type="text"
           placeholder="Enter city name"
-          value={city?.name}
+          value={city?.cityName}
         />
       </FloatingLabel>
 
@@ -90,7 +90,7 @@ let CityForm = ({ ...cityObj }: any) => {
         controlId="formCityDescription"
         label="City Description"
       >
-        <Form.Control type="textarea" placeholder="Enter description" value={city?.description}/>
+        <Form.Control type="textarea" placeholder="Enter description" value={city?.cityDescription}/>
       </FloatingLabel>
 
       <FloatingLabel className="mb-3" controlId="formCountries" label="Country">

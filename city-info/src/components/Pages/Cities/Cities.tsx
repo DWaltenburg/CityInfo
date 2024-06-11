@@ -9,7 +9,7 @@ let Cities = () => {
   useEffect(() => {
     let cities: any;
     $.ajax({
-      url: "https://cityinfo.buchwaldshave34.dk/api/City",
+      url: "https://cityinfo80.buchwaldshave34.dk/api/City/GetCities",
       type: "GET",
       success: function (data) {
         cities = [];

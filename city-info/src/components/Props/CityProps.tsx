@@ -7,8 +7,8 @@ export interface City {
   cityLanguages: CityLanguage[];
   country: Country;
   countryID: number;
-  description: string;
-  name: string;
+  cityDescription: string;
+  cityName: string;
   numberOfPointsOfInterest: number;
   pointsOfInterest: PointOfInterest[];
 }

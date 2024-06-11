@@ -26,7 +26,7 @@ let City = () => {
   useEffect(() => {
     let city: any;
     $.ajax({
-      url: "https://cityinfo.buchwaldshave34.dk/api/City/" + cityId.toString(),
+      url: "https://cityinfo80.buchwaldshave34.dk/api/City/GetCity/" + cityId.toString(),
       type: "GET",
       success: function (data) {
         city = data;

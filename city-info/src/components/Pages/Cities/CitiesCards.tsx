@@ -20,12 +20,12 @@ let CityCard = ({ ...props }: City) => {
       className="my-2 normal-text city-card"
     >
       <Card.Header>
-        <Card.Title>{props.name}</Card.Title>
+        <Card.Title>{props.cityName}</Card.Title>
         <Card.Subtitle>{props.country.countryName}</Card.Subtitle>
       </Card.Header>
       <Card.Body>
         <Card.Text>
-        {props.description}
+        {props.cityDescription}
         </Card.Text>
         <div style={{display: "flex", gap:"1rem", justifyContent: "flex-end"}}>
           <OverlayTrigger
@@ -83,8 +83,8 @@ let CitiesCards = ({ cities }: CityListProps) => {
                 cityLanguages={city.cityLanguages}
                 country={city.country}
                 countryID={city.countryID}
-                description={city.description}
-                name={city.name}
+                cityDescription={city.cityDescription}
+                cityName={city.cityName}
                 numberOfPointsOfInterest={city.numberOfPointsOfInterest}
                 pointsOfInterest={city.pointsOfInterest}
               />
