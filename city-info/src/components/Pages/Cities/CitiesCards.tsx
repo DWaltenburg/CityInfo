@@ -89,6 +89,7 @@ let DeleteCityModal = ({showModal, handleClose, cityId, cityName}: any) => {
     size="sm"
     centered
     onHide={handleClose}
+    fullscreen="sm-down"
     >
       <Modal.Header closeButton>
         <Modal.Title>Delete City "{cityName}"?</Modal.Title>
