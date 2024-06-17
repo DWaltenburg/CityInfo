@@ -1,12 +1,11 @@
 import { Button, Form, InputGroup } from "react-bootstrap";
 import { FloatingLabel } from "react-bootstrap";
-import $ from "jquery";
+import $, { event } from "jquery";
 import React, { useState } from "react";
 import { City as CityProps } from "../../Props/CityProps";
 
-
 let CityForm = ({ ...cityObj }: any) => {
-    let city: CityProps = cityObj.city? cityObj.city : null;
+  let city: CityProps = cityObj.city ? cityObj.city : null;
 
   const initialField: any[] = [];
   const [languages, setLanguages] = useState(initialField);
@@ -71,8 +70,41 @@ let CityForm = ({ ...cityObj }: any) => {
     });
   }
 
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    
+    interface cityDto {
+      cityName?: string;
+      cityDescription?: string;
+      countryID?: number;
+    }
+
+    let cityDto_Object:cityDto = {
+      cityName: $("#formCityName").val()?.toString(),
+      cityDescription: $("#formCityDescription").val()?.toString(),
+      countryID: $("#formCountries").val() as number,
+    }
+    console.log(cityDto_Object);
+    console.log(JSON.stringify(cityDto_Object));
+    $.ajax({
+      url: "https://cityinfo80.buchwaldshave34.dk/api/City/CreateCity",
+      type: "POST",
+      data: JSON.stringify(cityDto_Object),
+      success: function (data) {
+        console.log(`City ${data} created`);
+      },
+      error: function (error) {
+        console.log(error);
+      },
+    });
+    // returnToCities();
+  };
+  let returnToCities = () => {
+    window.location.href = "#/Cities";
+  };
+
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <FloatingLabel
         className="mb-3"
         controlId="formCityName"
@@ -90,7 +122,11 @@ let CityForm = ({ ...cityObj }: any) => {
         controlId="formCityDescription"
         label="City Description"
       >
-        <Form.Control type="textarea" placeholder="Enter description" value={city?.cityDescription}/>
+        <Form.Control
+          type="textarea"
+          placeholder="Enter description"
+          value={city?.cityDescription}
+        />
       </FloatingLabel>
 
       <FloatingLabel className="mb-3" controlId="formCountries" label="Country">
@@ -108,7 +144,7 @@ let CityForm = ({ ...cityObj }: any) => {
           }
         />
       </FloatingLabel>
-
+{/* 
       <Form.Group className="mb-3" controlId="formLanguages">
         <Form.Label>Languages</Form.Label>
         <Form.Select
@@ -142,7 +178,7 @@ let CityForm = ({ ...cityObj }: any) => {
             )
           }
         />
-      </Form.Group>
+      </Form.Group> */}
 
       <InputGroup>
         <Button variant="success" type="submit">
@@ -151,7 +187,7 @@ let CityForm = ({ ...cityObj }: any) => {
         <Button variant="secondary" type="reset">
           Reset
         </Button>
-        <Button variant="danger" type="button">
+        <Button variant="danger" type="button" onClick={returnToCities}>
           Cancel
         </Button>
       </InputGroup>
