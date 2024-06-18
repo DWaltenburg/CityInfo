@@ -100,7 +100,7 @@ let CityForm = ({ ...cityObj }: any) => {
         console.log(error);
       },
     });
-    // returnToCities();
+    returnToCities();
   };
   let returnToCities = () => {
     window.location.href = "#/Cities";
