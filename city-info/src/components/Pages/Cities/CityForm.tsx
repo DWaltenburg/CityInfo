@@ -88,6 +88,9 @@ let CityForm = ({ ...cityObj }: any) => {
     console.log(JSON.stringify(cityDto_Object));
     $.ajax({
       url: "https://cityinfo80.buchwaldshave34.dk/api/City/CreateCity",
+      headers: {'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       type: "POST",
       data: JSON.stringify(cityDto_Object),
       success: function (data) {
